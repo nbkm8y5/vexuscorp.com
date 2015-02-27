@@ -1,0 +1,128 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+
+.dropdown-menu li a{
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+
+ul.sociallinks li{
+	display: inline-block;
+}
+
+ul.sociallinks{
+	padding-left: 0px;
+	margin-top: 10px;
+}
+
+li a.facebook{
+	background-color: #ef3e33;
+	background-image: url(../images/facebook.png);
+}
+li a.twitter{
+	background-color: #ef3e33;
+	background-image: url(../images/twitter.png);
+}
+li a.instagram{
+	background-color: #ef3e33;
+	background-image: url(../images/instagram.png);
+}
+
+ul.sociallinks li a{
+	width: 28px;
+	height: 28px;
+	display: block;
+	padding: 0;
+	margin: 0;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+ul.sociallinks li a:hover{
+	transition: background-color 1s ease;
+	background-color: #000;
+}
+
+li.address{
+	background-image: url(../images/contact-address.png);
+	background-repeat: no-repeat;
+	margin-bottom: 10px;
+	text-indent: 5%;
+}
+
+li.phone{
+	background-image: url(../images/contact-phone.png);
+	background-repeat: no-repeat;
+	margin-bottom: 10px;
+	text-indent: 5%;
+}
+
+li.fax{
+	background-image: url(../images/contact-fax.png);
+	background-repeat: no-repeat;
+	margin-bottom: 10px;
+	text-indent: 5%;
+}
+
+li.email{
+	background-image: url(../images/contact-email.png);
+	background-repeat: no-repeat;
+	margin-bottom: 10px;
+	text-indent: 5%;
+}
+
+li.internet{
+	background-image: url(../images/contact-internet.png);
+	background-repeat: no-repeat;
+	margin-bottom: 10px;
+	text-indent: 5%;
+}	
+
+ul.contact{
+	list-style-type: none;
+}
+
+.featurette-divider{
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.spanpad{
+	padding: 15px;
+}
+
+.thumbnail img{
+	margin-top: 25px;
+}
+
+.navbar{
+	margin-bottom: 0px;
+}
+
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block; 
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+	transition: 0.5s ease;
+	color: #ef3e33;
+}
+
+.dropdown-menu>li>a:hover{
+	transition: 0.5s ease;
+	color: #ef3e33;
+}
+
+.navbar-nav>li:hover{
+	transition: 0.5s ease;
+	background-color: #000;
+}
