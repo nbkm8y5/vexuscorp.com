@@ -152,7 +152,9 @@ require_once 'php/session.php';
         </div>
         <div class="row">
           <h2>WHAT WE DO!</h2>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          <p>Vexus Corporation is a leading global IT solutions distributor dedicated to accelerating the success of its customers by providing market-specific resources, expertise, services and tools. Vexus Corporation’s core solutions and services offerings expand across the hardware industry, providing cost-effective solutions that identify high-growth areas in key technologies and vertical markets. With these technology and market specializations provided by Vexus Corporation , partners can effectively address their customers’ needs and business challenges resulting in new market opportunities and increased revenue growth.
+
+Vexus Corporation expanded its operations in Latin America and the Caribbean, as a value–added distributor focused on delivering solutions from leading global IT suppliers. This expansion not only added new suppliers to the Vexus Corporation line card, it also positioned Vexus Corporation to develop new and existing customer relationships by extending its unique solutions and distribution strategy into high growth markets in region.</p>
         </div>
         <hr class="featurette-divider">
         <div class="row text-center">
