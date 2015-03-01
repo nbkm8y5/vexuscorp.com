@@ -1,6 +1,42 @@
 <?php
 session_start();
-require_once 'php/session_tools.php';
+require_once 'php/session.php';
+if ($_POST['email']) {
+//Connect to the database through our include 
+require_once "php/db_connect.php";
+$email = stripslashes($_POST['email']);
+$email = strip_tags($email);
+$email = mysql_real_escape_string($email);
+$password = ereg_replace("[^A-Za-z0-9]", "", $_POST['password']); // filter everything but numbers and letters
+$password = md5($password);
+// Make query and then register all database data that -
+// cannot be changed by member into SESSION variables.
+// Data that you want member to be able to change -
+// should never be set into a SESSION variable.
+$sql = mysql_query("SELECT * FROM clients WHERE email='$email' AND password='$password' AND emailactivated='1'"); 
+$login_check = mysql_num_rows($sql);
+if($login_check > 0){ 
+    while($row = mysql_fetch_array($sql)){ 
+        // Get member ID into a session variable
+        $id = $row["id"];   
+        session_register('id'); 
+        $_SESSION['id'] = $id;
+        // Get member username into a session variable
+      $username = $row["username"];   
+        session_register('username'); 
+        $_SESSION['username'] = $username;
+        // Update last_log_date field for this member now
+        mysql_query("UPDATE clients SET lastlogin=now() WHERE id='$id'"); 
+        // Print success message here if all went well then exit the script
+        header("Location: /test/index.php");
+    exit();
+    } // close while
+} else {
+// Print login failure message to the user and link them back to your login page
+  $noUser = 'No match in our records. You will be automatically redirected to login page to try again.';
+  $metaWrite = '<meta http-equiv="refresh" content="7;url=login.php">';
+}
+}// close if post
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,13 +44,31 @@ require_once 'php/session_tools.php';
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vexus Corp - High Technology Products Tools</title>
+    <?php echo $metaWrite ?>
+    <title>Vexus Corp - Login Page</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 
     <link rel="icon" type="image/png" href="images/x16.png">
+
+    <script type="text/javascript">
+        <!-- Form Validation -->
+        function validate_form ( ) { 
+        valid = true; 
+        if ( document.logform.email.value == "" ) { 
+        alert ( "Please enter your User Name" ); 
+        valid = false;
+        }
+        if ( document.logform.pass.value == "" ) { 
+        alert ( "Please enter your password" ); 
+        valid = false;
+        }
+        return valid;
+        }
+    <!-- Form Validation -->
+    </script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -89,7 +143,27 @@ require_once 'php/session_tools.php';
         </div>
       </div>
     </nav>
-    <?php echo $tools;?>
+    <section>
+      <div class="container">
+        <div class="col-md-offset-4 col-md-4 text-center">
+          <h3>Log in to your account here</h3>
+        <form action="login.php" method="post" enctype="multipart/form-data" name="logform" id="logform" onsubmit="return validate_form ( );">
+          <div class="form-group">
+            <label for="emailaddress">Email Address</label>
+            <input name="email" type="email" value="<?php echo "$email"; ?>" class="form-control" id="emailaddress" placeholder="Enter your email address" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input name="password" type="password" value="<?php echo "$password"; ?>" class="form-control" id="password" placeholder="Enter password" required>
+          </div>
+          <button type="submit" class="btn btn-danger">Sign In</button>
+          <button type="reset" class="btn btn-default">Reset</button>
+        </form>
+        
+        <h6><?php echo $noUser; ?></h6>
+        </div>
+      </div>
+    </section>
     <footer>
       <div class="container">
         <hr class="featurette-divider">
@@ -118,6 +192,7 @@ require_once 'php/session_tools.php';
         </div>
       </div>
     </footer>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->

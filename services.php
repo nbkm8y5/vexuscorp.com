@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'php/session_tools.php';
+require_once 'php/session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@ require_once 'php/session_tools.php';
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vexus Corp - High Technology Products Tools</title>
+    <title>Vexus Corp - Services</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -89,8 +89,21 @@ require_once 'php/session_tools.php';
         </div>
       </div>
     </nav>
-    <?php echo $tools;?>
-    <footer>
+    <hr class="featurette-divider">
+    <section id="hpRenew" class="container-fluid productSection centeredH1">
+      <h1>HP Renew – Americas</h1>
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Get started. <span class="text-muted">And win.</span></h2>
+          <p class="lead">Whether your organization is looking to implement a new IT platform or planning to maintain or upgrade your existing one, HP Renew offers a comprehensive portfolio of enterprise products to fulfill your specific business needs.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="images/tower.jpg" alt="Generic placeholder image">
+        </div>
+      </div>
+      <a id="topLinks" href="services.php" target="_top">Top</a>
+    </section>
+    <hr class="featurette-divider">    <footer>
       <div class="container">
         <hr class="featurette-divider">
         <div class="row">
@@ -118,6 +131,7 @@ require_once 'php/session_tools.php';
         </div>
       </div>
     </footer>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->

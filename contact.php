@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'php/session_tools.php';
+require_once 'php/session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@ require_once 'php/session_tools.php';
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vexus Corp - High Technology Products Tools</title>
+    <title>Vexus Corp - Contact Us</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -89,7 +89,113 @@ require_once 'php/session_tools.php';
         </div>
       </div>
     </nav>
-    <?php echo $tools;?>
+    <section id ="aboutJumbotron" class="container-fluid productSection">
+      <div id="row">
+        <div id="aboutUs"  class="col-xs-12 col-sm-12 col-md-6">
+          <h1>What we do!</h1>
+          <a id="topLinks" href="about.html" target="_top">Top</a>
+          <p class="paragraphIndent">Vexus Corporation is a leading global IT solutions distributor dedicated to accelerating the success of its customers by providing market-specific resources, expertise, services and tools. Vexus Corporation’s core solutions and services offerings expand across the hardware industry, providing cost-effective solutions that identify high-growth areas in key technologies and vertical markets. With these technology and market specializations provided by Vexus Corporation , partners can effectively address their customers’ needs and business challenges resulting in new market opportunities and increased revenue growth.</p>
+
+          <p class="paragraphIndent">Vexus Corporation expanded its operations in Latin America and the Caribbean, as a value–added distributor focused on delivering solutions from leading global IT suppliers. This expansion not only added new suppliers to the Vexus Corporation line card, it also positioned Vexus Corporation to develop new and existing customer relationships by extending its unique solutions and distribution strategy into high growth markets in region.</p>
+        </div>
+        <div id="anImage"  class="col-xs-12 col-sm-12 col-md-6" style="padding-top:25px; text-align:center">
+          <img src="images/vexusWarehouse.jpg" class="img-rounded">
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="container-fluid productSection centeredH1">
+      <h1>OUR TEAM</h1>
+      <a id="topLinks" href="contact.php" target="_top">Top</a>
+      <div id="aboutThumbs" class="row">
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="thumbnail">
+            <img src="images/ronald.png" alt="Ronald Gonzalez" class="img-circle">
+            <div id="captionImage" class="caption">
+              <h3>Ronald Gonzalez</h3>
+              <p>Chief Executive Officer</p>
+              <!-- <ul>
+                <li><a href="mailto:ronaldgonzalez@vexuscorp.com?Subject=Inquiry%20from%20vexuscorp.com" target="_top"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></a></li>
+                <li><a href="#"><img src="images/linked.png"></a></li>
+                <li><a href="#"><img src="images/twitter.png"></a></li>
+              </ul> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="thumbnail">
+            <img src="images/teresa.png" alt="Teresa Akkou" class="img-circle">
+            <div id="captionImage" class="caption">
+              <h3>Teresa Akkou</h3>
+              <p>Chief Accountant</p>
+              <!-- <ul>
+                <li><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></li>
+                <li><a href="#"><img src="images/linked.png"></a></li>
+                <li><a href="#"><img src="images/twitter.png"></a></li>
+              </ul> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="thumbnail">
+            <img src="images/dm.jpg" alt="Daniela Miartus" class="img-circle">
+            <div id="captionImage" class="caption">
+              <h3>Daniela Miartus</h3>
+              <p>Business Development Manager</p>
+              <!-- <ul>
+                <li><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></li>
+                <li><a href="#"><img src="images/linked.png"></a></li>
+                <li><a href="#"><img src="images/twitter.png"></a></li>
+              </ul> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="aboutThumbs" class="row">
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="thumbnail">
+            <img src="images/team.jpg" alt="John Doe" class="img-circle">
+            <div id="captionImage" class="caption">
+              <h3>John Doe</h3>
+              <p>Business Development Manager</p>
+              <!-- <ul>
+                <li><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></li>
+                <li><a href="#"><img src="images/linked.png"></a></li>
+                <li><a href="#"><img src="images/twitter.png"></a></li>
+              </ul> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="thumbnail">
+            <img src="images/blade.jpg" alt="Jane Doe" class="img-circle">
+            <div id="captionImage" class="caption">
+              <h3>Jane Doe</h3>
+              <p>Business Development Manager</p>
+              <!-- <ul>
+                <li><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></li>
+                <li><a href="#"><img src="images/linked.png"></a></li>
+                <li><a href="#"><img src="images/twitter.png"></a></li>
+              </ul> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="thumbnail">
+            <img src="images/moreno.png" alt="Rolando Moreno" class="img-circle">
+            <div id="captionImage" class="caption">
+              <h3>Rolando Moreno</h3>
+              <p>Web Developer / Software Architect</p>
+              <!-- <ul>
+                <li><a href="mailto:developer@rolandomoreno.com?Subject=Developer%20Questions" target="_top"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></a></li>
+                <li><a href="https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile" target="_blank"><img src="images/linked.png"></a></li>
+                <li><a href="https://twitter.com/305rol" target="_blank"><img src="images/twitter.png"></a></li>
+              </ul> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <footer>
       <div class="container">
         <hr class="featurette-divider">
@@ -118,6 +224,7 @@ require_once 'php/session_tools.php';
         </div>
       </div>
     </footer>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->

@@ -1,4 +1,6 @@
 <?php
+session_start();
+require_once 'php/session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +54,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Vexus Corp</a>
+          <a class="navbar-brand" href="index.php">Vexus Corp</a>
         </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -61,33 +63,28 @@
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Products<span class="caret"></span></br><small>Available</small></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">HP Servers</a></li>
-                  <li><a href="#">Business Printers</a></li>
-                  <li><a href="#">New Products</a></li>
+                  <li><a href="products.php#hpServers">HP Servers</a></li>
+                  <li><a href="products.php#businessPrinters">Business Printers</a></li>
+                  <li><a href="products.php#newProducts">New Products</a></li>
                 </ul>
               </li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Solutions <span class="caret"></span></br><small>For all your needs</small></a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Cloud Computing</a></li>
-                    <li><a href="#">It Infrastructure Outsourcing</a></li>
-                    <li><a href="#">Customization</a></li>
+                    <li><a href="solutions.php#cloudComputing">Cloud Computing</a></li>
+                    <li><a href="solutions.php#infraOutsource">It Infrastructure Outsourcing</a></li>
+                    <li><a href="solutions.php#custom">Customization</a></li>
                   </ul>
               </li>
-              <li class="dropdown">
-              <a href="tools.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tools <span class="caret"></span></br><small>At your disposal</small></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="tools.php#hardware">Hardware Support Tools</a></li>
-                    <li><a href="tools.php#software">Software Support Tools</a></li>
-                  </ul>
-              </li>
+              <?php echo $navLinks; ?>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Services <span class="caret"></span></br><small>From HP</small></a>
               <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">HP Renew America</a></li>
+                    <li><a href="services.php">HP Renew America</a></li>
                   </ul>
               </li>
-              <li><a href="#">Contact</br><small>Vexus Corp</small></a></li>
+              <li><a href="contact.php">Contact</br><small>Vexus Corp</small></a></li>
+              <?php echo $login ?>
             </ul>
           </div>
         </div>
@@ -109,9 +106,9 @@
           <img src="images/carousel_one.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+              <h1>HP Servers.</h1>
+              <p>Learn all about them!</p>
+              <p><a class="btn btn-lg btn-danger" href="products.php#hpServers" role="button">Check it out</a></p>
             </div>
           </div>
         </div>
@@ -119,9 +116,9 @@
           <img src="images/carousel_two.jpg" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+              <h1>Software and Hardware Solutions</h1>
+              <p>Only takes a minute to sign up and have full access.</p>
+              <p><a class="btn btn-lg btn-danger" href="join_form.php" role="button">Sign Up</a></p>
             </div>
           </div>
         </div>
@@ -129,9 +126,9 @@
           <img src="images/carousel_3.jpg" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+              <h1>Business Printers</h1>
+              <p>Take a look.</p>
+              <p><a class="btn btn-lg btn-danger" href="products.php#businessPrinters" role="button">Come on in</a></p>
             </div>
           </div>
         </div>
@@ -255,7 +252,7 @@
         </div>
         </div>
         <div class="row text-center">
-          <h6>&copy <?php echo date('Y'); ?> Vexus Corp</h6?
+          <h6>&copy <?php echo date('Y'); ?> Vexus Corp</h6>
         </div>
       </div>
     </footer>

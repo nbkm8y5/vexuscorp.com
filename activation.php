@@ -1,6 +1,30 @@
 <?php
 session_start();
-require_once 'php/session_tools.php';
+$errorMessage='';
+require_once 'php/session.php';
+require_once 'php/db_connect.php';
+// Get the member id from the URL variable
+$id = $_REQUEST['id'];
+$id = ereg_replace("[^0-9]", "", $id); // filter everything but numbers for security
+if (!$id) {
+  $errorMessage = "Missing Data to Run";
+  //exit(); 
+}
+// Update the database field named 'email_activated' to 1
+$sql = mysql_query("UPDATE clients SET emailactivated='1' WHERE id='$id'"); 
+// Check the database to see if all is right now 
+$sql_doublecheck = mysql_query("SELECT * FROM clients WHERE id='$id' AND emailactivated='1'"); 
+$doublecheck = mysql_num_rows($sql_doublecheck); 
+if($doublecheck == 0){ 
+// Print message to the browser saying we could not activate them
+$errorMessage = "Your account could not be activated!  Please try your email again.";
+$metaWrite = '<meta http-equiv="refresh" content="7;url=index.php">'; 
+} elseif ($doublecheck > 0) {
+// Print a success message to the browser cuz all is good 
+// And supply the user with a link to your log in page, please alter that link line 
+$hurrayMessage =  "Your account has been activated!  You will now be redirected to login page!";
+$metaWrite = '<meta http-equiv="refresh" content="7;url=login.php">';
+} 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +32,8 @@ require_once 'php/session_tools.php';
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vexus Corp - High Technology Products Tools</title>
+    <?php echo $metaWrite; ?>
+    <title>Vexus Corp - Activation Success!</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -89,7 +114,15 @@ require_once 'php/session_tools.php';
         </div>
       </div>
     </nav>
-    <?php echo $tools;?>
+    <section>
+      <div class="container">
+        <div class="col-md-offset-4 col-md-4 text-center">
+          <h1>Activation Confirmation</h1>
+          <h6><?php echo $hurrayMessage; ?></h6>
+          <h6><?php echo $errorMessage; ?></h6>
+        </div>
+      </div>
+    </section>
     <footer>
       <div class="container">
         <hr class="featurette-divider">
@@ -118,6 +151,7 @@ require_once 'php/session_tools.php';
         </div>
       </div>
     </footer>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->

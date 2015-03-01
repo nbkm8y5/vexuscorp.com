@@ -1,6 +1,12 @@
 <?php
 session_start();
-require_once 'php/session_tools.php';
+require_once 'php/session.php';
+session_destroy(); 
+if(!session_is_registered('id')){ 
+$message = "You are now logged out.";
+} else {
+$message = "Could not log you out. Try again.";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +14,8 @@ require_once 'php/session_tools.php';
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vexus Corp - High Technology Products Tools</title>
+    <meta http-equiv="refresh" content="7;url=index.php">
+    <title>Vexus Corp - Logging Out</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -89,7 +96,15 @@ require_once 'php/session_tools.php';
         </div>
       </div>
     </nav>
-    <?php echo $tools;?>
+    <section>
+      <div class="container">
+        <div class="col-md-offset-4 col-md-4 text-center">
+          <h1>Log out Status</h1>
+          <h6><?php echo $message; ?></h6>
+          <h6>You will now be automatically redirected back to the Home Page.</h6>
+        </div>
+      </div>
+    </section>
     <footer>
       <div class="container">
         <hr class="featurette-divider">
@@ -118,6 +133,7 @@ require_once 'php/session_tools.php';
         </div>
       </div>
     </footer>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'php/session_tools.php';
+require_once 'php/session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@ require_once 'php/session_tools.php';
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vexus Corp - High Technology Products Tools</title>
+    <title>Vexus Corp - Registration Page</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -89,7 +89,71 @@ require_once 'php/session_tools.php';
         </div>
       </div>
     </nav>
-    <?php echo $tools;?>
+
+    <section>
+      <div class="container">
+        <div class="col-md-offset-4 col-md-4">
+          <form action="join_confirmation.php" method="post" enctype="multipart/form-data">
+      <h6><?php echo "$errorMsg"; ?></h6>
+    <div class="form-group">
+      <label for="userName">User Name</label>
+      <input type="text" class="form-control" id="userName" name="username" placeholder="Enter user name" value="<?php echo "$userName"; ?>" required>
+      <h6>(Letters or numbers only.  No spaces or symbols.)</h6>
+    </div>
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" class="form-control" id="firstName" name="firstname" placeholder="Enter first name" value="<?php echo "$firstName"; ?>" required>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" class="form-control" id="lastName" name="lastname" placeholder="Enter last name" value="<?php //echo "$lastName"; ?>" required>
+    </div>
+    <div class="form-group">
+      <label for="businessName">Business Name</label>
+      <input type="text" class="form-control" id="businessName" name="businessname" placeholder="Enter business name" value="<?php //echo "$businessName"; ?>" required>
+    </div>
+    <div class="form-group">
+      <label for="businessAddress">Business Address</label>
+      <input type="text" class="form-control" id="businessAddress" name="businessaddress" placeholder="Enter business address" value="<?php //echo "$businessAddress"; ?>" required>
+    </div>
+    <div class="form-group">
+      <label for="country">Country</label>
+      <select class="form-control" id="country" name="country" required>
+        <option value="<?php echo "$country"; ?>"><?php echo "$country"; ?></option>
+        <option value="Australia">Australia</option>
+        <option value="Canada">Canada</option>
+        <option value="Mexico">Mexico</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="United States">United States</option>
+        <option value="Zimbabwe">Zimbabwe</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" class="form-control" id="city" name="city"  placeholder="City" value="<?php echo "$city"; ?>" required>
+    </div>
+    <div class="form-group">
+      <label for="state">State</label>
+      <input type="text" class="form-control" id="state" name="state" placeholder="State" value="<?php echo "$state"; ?>" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Business Email</label>
+      <input type="email" class="form-control" id="email" name="email"  placeholder="Business email address please" value="<?php echo "$email"; ?>" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Password" value="<?php echo "$password"; ?>" required>
+      <h6>(Letters or numbers only.  No spaces or symbols.)</h6>
+    </div>
+    <button type="submit" class="btn btn-danger">Submit Registration</button>
+    <button type="reset" class="btn btn-default">Reset Form</button>
+  </form>
+        </div>
+      </div>
+    </section>
+    
+    
+
     <footer>
       <div class="container">
         <hr class="featurette-divider">
@@ -118,6 +182,7 @@ require_once 'php/session_tools.php';
         </div>
       </div>
     </footer>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->

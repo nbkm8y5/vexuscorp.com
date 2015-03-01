@@ -1,6 +1,8 @@
 <?php
 session_start();
-require_once 'php/session_tools.php';
+require_once 'session.php';
+require_once 'db_connect.php';
+require_once 'ping.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,13 +10,13 @@ require_once 'php/session_tools.php';
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vexus Corp - High Technology Products Tools</title>
+    <title>Vexus Corp - Diagnostics Page</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 
-    <link rel="icon" type="image/png" href="images/x16.png">
+    <link rel="icon" type="image/png" href="../images/x16.png">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,11 +29,11 @@ require_once 'php/session_tools.php';
     <header>
       <div class="container">
         <div class="col-md-4">
-          <img src="images/vexus_corp_logo.png">
+          <img src="../images/vexus_corp_logo.png">
         </div>
         <div class="col-md-offset-4 col-md-4 text-center">
           <div class="row">
-            <span><img src="images/contact-phone.png"></span><span class="spanpad">(305) 406-2001</span><span><img src="images/contact-email.png"></span><span class="spanpad">info@vexuscorp.com</span> 
+            <span><img src="../images/contact-phone.png"></span><span class="spanpad">(305) 406-2001</span><span><img src="../images/contact-email.png"></span><span class="spanpad">info@vexuscorp.com</span> 
           </div>
           <div class="row">
             <ul class="sociallinks">
@@ -53,7 +55,7 @@ require_once 'php/session_tools.php';
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Vexus Corp</a>
+          <a class="navbar-brand" href="#">Vexus Corp</a>
         </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -62,34 +64,41 @@ require_once 'php/session_tools.php';
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Products<span class="caret"></span></br><small>Available</small></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a href="products.php#hpServers">HP Servers</a></li>
-                  <li><a href="products.php#businessPrinters">Business Printers</a></li>
-                  <li><a href="products.php#newProducts">New Products</a></li>
+                  <li><a href="#">HP Servers</a></li>
+                  <li><a href="#">Business Printers</a></li>
+                  <li><a href="#">New Products</a></li>
                 </ul>
               </li>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Solutions <span class="caret"></span></br><small>For all your needs</small></a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="solutions.php#cloudComputing">Cloud Computing</a></li>
-                    <li><a href="solutions.php#infraOutsource">It Infrastructure Outsourcing</a></li>
-                    <li><a href="solutions.php#custom">Customization</a></li>
+                    <li><a href="#">Cloud Computing</a></li>
+                    <li><a href="#">It Infrastructure Outsourcing</a></li>
+                    <li><a href="#">Customization</a></li>
                   </ul>
               </li>
               <?php echo $navLinks; ?>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Services <span class="caret"></span></br><small>From HP</small></a>
               <ul class="dropdown-menu" role="menu">
-                    <li><a href="services.php">HP Renew America</a></li>
+                    <li><a href="#">HP Renew America</a></li>
                   </ul>
               </li>
-              <li><a href="contact.php">Contact</br><small>Vexus Corp</small></a></li>
+              <li><a href="#">Contact</br><small>Vexus Corp</small></a></li>
               <?php echo $login ?>
             </ul>
           </div>
         </div>
       </div>
     </nav>
-    <?php echo $tools;?>
+    <section>
+      <div class="container">
+        <div class="col-md-offset-4">
+          <h1>Diagnostics Page</h1>
+          <h3>Database Connectivity:</h3>
+          <h3><?php echo databasePing(); ?></h3>
+      </div>
+    </section>
     <footer>
       <div class="container">
         <hr class="featurette-divider">
@@ -118,6 +127,7 @@ require_once 'php/session_tools.php';
         </div>
       </div>
     </footer>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->

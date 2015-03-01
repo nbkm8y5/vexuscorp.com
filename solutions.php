@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'php/session_tools.php';
+require_once 'php/session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@ require_once 'php/session_tools.php';
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vexus Corp - High Technology Products Tools</title>
+    <title>Vexus Corp - Solutions</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -89,7 +89,48 @@ require_once 'php/session_tools.php';
         </div>
       </div>
     </nav>
-    <?php echo $tools;?>
+    <hr class="featurette-divider">
+    <section id="cloudComputing" class="container-fluid productSection centeredH1">
+      <h1>CLOUD COMPUTING</h1>
+      <div class="row featurette" style="padding: 25px 25px 25px 25px">
+        <div class="col-md-7" style="padding-left: 100px; padding-right: 100px; padding-top: 100px">
+          <h2 class="featurette-heading">This is your cloud.<span class="text-muted">Your cloud. Your way.</span></h2>
+          <p class="lead">HP Cloud is the set of cloud solutions available from Hewlett-Packard (HP) that offers public cloud, private cloud, hybrid cloud, managed private cloud, and other cloud services.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive img-rounded" src="images/cloud.jpg" alt="Generic placeholder image">
+        </div>
+      </div>
+      <a id="topLinks" href="solutions.php" target="_top">Top</a>
+    </section>
+    <hr class="featurette-divider">
+    <section id="infraOutsource" class="container-fluid productSection centeredH1">
+      <h1>IT INFRASTRUCTURE OUTSOURCING</h1>
+      <div class="row featurette" style="padding: 25px 25px 25px 25px">
+        <div class="col-md-7" style="padding-left: 75px; padding-right: 75px; padding-top: 25px">
+          <h2 class="featurette-heading">Infrastructure managed as one.<span class="text-muted">Think big.</span></h2>
+          <p class="lead">HP OneView is management software that works across servers, storage, and networking with a new approach — designed for people, not the device. Eliminate complexity with automation simplicity.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive img-rounded" src="images/dc.jpg" alt="Generic placeholder image">
+        </div>
+      </div>
+      <a id="topLinks" href="solutions.php" target="_top">Top</a>
+    </section>
+    <hr class="featurette-divider">
+    <section id="custom" class="container-fluid productSection centeredH1">
+      <h1>CUSTOMIZATION</h1>
+      <div class="row featurette" style="padding: 25px 25px 25px 25px">
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive img-rounded" src="images/custom.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="padding-left: 75px; padding-right: 75px; padding-top: 25px">
+          <h2 class="featurette-heading">Exactly what you need.<span class="text-muted">Think big.</span></h2>
+          <p class="lead">We completely customize all of our machines to match your individual needs. Our online quoting and ordering system has more customizable options than any other system builder on the web.</p>
+        </div>
+      </div>
+      <a id="topLinks" href="solutions.php" target="_top">Top</a>
+    </section>
     <footer>
       <div class="container">
         <hr class="featurette-divider">
@@ -118,6 +159,7 @@ require_once 'php/session_tools.php';
         </div>
       </div>
     </footer>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
