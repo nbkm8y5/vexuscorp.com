@@ -1,128 +1,131 @@
-body{
-	margin: 0px;
-	padding: 0px;
-	font-family: 'Lato', sans-serif;
-	font-weight: 300;
-}
-h1, h2, h3, h4, h5, h6{
-	font-family: 'Lato', sans-serif;
-	font-weight: 300;
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
 }
 
-.dropdown-menu li a{
-	font-family: 'Lato', sans-serif;
-	font-weight: 300;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
 }
 
-ul.sociallinks li{
-	display: inline-block;
+.dropdown-menu li a {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
 }
 
-ul.sociallinks{
-	padding-left: 0px;
-	margin-top: 10px;
+ul.sociallinks li {
+    display: inline-block;
 }
 
-li a.facebook{
-	background-color: #ef3e33;
-	background-image: url(../images/facebook.png);
-}
-li a.twitter{
-	background-color: #ef3e33;
-	background-image: url(../images/twitter.png);
-}
-li a.instagram{
-	background-color: #ef3e33;
-	background-image: url(../images/instagram.png);
+ul.sociallinks {
+    padding-left: 0px;
+    margin-top: 10px;
 }
 
-ul.sociallinks li a{
-	width: 28px;
-	height: 28px;
-	display: block;
-	padding: 0;
-	margin: 0;
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
+li a.facebook {
+    background-color: #ef3e33;
+    background-image: url(../images/facebook.png);
 }
 
-ul.sociallinks li a:hover{
-	transition: background-color 1s ease;
-	background-color: #000;
+li a.twitter {
+    background-color: #ef3e33;
+    background-image: url(../images/twitter.png);
 }
 
-li.address{
-	background-image: url(../images/contact-address.png);
-	background-repeat: no-repeat;
-	margin-bottom: 10px;
-	text-indent: 5%;
+li a.instagram {
+    background-color: #ef3e33;
+    background-image: url(../images/instagram.png);
 }
 
-li.phone{
-	background-image: url(../images/contact-phone.png);
-	background-repeat: no-repeat;
-	margin-bottom: 10px;
-	text-indent: 5%;
+ul.sociallinks li a {
+    width: 28px;
+    height: 28px;
+    display: block;
+    padding: 0;
+    margin: 0;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-li.fax{
-	background-image: url(../images/contact-fax.png);
-	background-repeat: no-repeat;
-	margin-bottom: 10px;
-	text-indent: 5%;
+ul.sociallinks li a:hover {
+    transition: background-color 1s ease;
+    background-color: #000;
 }
 
-li.email{
-	background-image: url(../images/contact-email.png);
-	background-repeat: no-repeat;
-	margin-bottom: 10px;
-	text-indent: 5%;
+li.address {
+    background-image: url(../images/contact-address.png);
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    text-indent: 5%;
 }
 
-li.internet{
-	background-image: url(../images/contact-internet.png);
-	background-repeat: no-repeat;
-	margin-bottom: 10px;
-	text-indent: 5%;
-}	
-
-ul.contact{
-	list-style-type: none;
+li.phone {
+    background-image: url(../images/contact-phone.png);
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    text-indent: 5%;
 }
 
-.featurette-divider{
-	margin-top: 40px;
-	margin-bottom: 40px;
+li.fax {
+    background-image: url(../images/contact-fax.png);
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    text-indent: 5%;
 }
 
-.spanpad{
-	padding: 15px;
+li.email {
+    background-image: url(../images/contact-email.png);
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    text-indent: 5%;
 }
 
-.thumbnail img{
-	margin-top: 25px;
+li.internet {
+    background-image: url(../images/contact-internet.png);
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    text-indent: 5%;
 }
 
-.navbar{
-	margin-bottom: 0px;
+ul.contact {
+    list-style-type: none;
+}
+
+.featurette-divider {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.spanpad {
+    padding: 15px;
+}
+
+.thumbnail img {
+    margin-top: 25px;
+}
+
+.navbar {
+    margin-bottom: 0px;
 }
 
 ul.nav li.dropdown:hover > ul.dropdown-menu {
-    display: block; 
+    display: block;
 }
 
-.navbar-default .navbar-nav > li > a:hover{
-	transition: 0.5s ease;
-	color: #ef3e33;
+.navbar-default .navbar-nav > li > a:hover {
+    transition: 0.5s ease;
+    color: #ef3e33;
 }
 
-.dropdown-menu>li>a:hover{
-	transition: 0.5s ease;
-	color: #ef3e33;
+.dropdown-menu > li > a:hover {
+    transition: 0.5s ease;
+    color: #ef3e33;
 }
 
-.navbar-nav>li:hover{
-	transition: 0.5s ease;
-	background-color: #000;
+.navbar-nav > li:hover {
+    transition: 0.5s ease;
+    background-color: #000;
 }
