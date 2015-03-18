@@ -26,7 +26,7 @@ Using Agile Methodology
 	Encapsulation of session.php
  	Encapsulation of test_input.php
 	Encapsulation of db_connect.php
-	Encapsulation of png.php
+	Encapsulation of ping.php
 	Encapsulation of session_tools.php
 	
 	Add new tables that take advantage of stored procedures
