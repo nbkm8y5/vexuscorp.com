@@ -20,6 +20,10 @@ Using Agile Methodology
 
 ## 3. Chores – representing work that must be done, but provide no direct business value
 	
+	Remove username from submission form
+	and use email as the user name.
+	add a business telephone number.
+	country after city and state.
 	Encapsulation of join_confirmation.php
 	Encapsulation of activation.php
 	Encapsulation of login.php
